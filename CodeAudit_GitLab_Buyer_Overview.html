@@ -1,0 +1,94 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/>
+<title>CodeAudit One | GitLab acquisition overview</title>
+<style>
+@page { size:A4; margin:0; }
+*{box-sizing:border-box}html,body{margin:0;padding:0;background:#fff;color:#162435;font-family:"Segoe UI",Arial,sans-serif;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+.page{width:210mm;height:297mm;position:relative;overflow:hidden;page-break-after:always;background:#fff;padding:20mm 18mm 18mm}
+.page:last-child{page-break-after:auto}
+.stripe{position:absolute;top:0;left:0;width:100%;height:6mm;background:#102135;}
+.logo{font-size:13px;letter-spacing:1.6px;text-transform:uppercase;color:#087565;font-weight:800}.logo strong{font-weight:900;color:#13283e}
+.eyebrow{font-size:10px;color:#64808e;text-transform:uppercase;letter-spacing:1.6px;font-weight:750;margin:20mm 0 4mm}
+h1{font-size:38px;letter-spacing:-1.8px;line-height:1.08;margin:0 0 5mm;color:#14273c;}
+h2{font-size:22px;letter-spacing:-.8px;line-height:1.15;color:#14273c;margin:0 0 5mm}
+h3{font-size:15px;letter-spacing:-.3px;margin:0 0 2mm;color:#153349}
+p{font-size:12.5px;line-height:1.53;margin:0 0 3mm;color:#304a5c}
+.lead{font-size:16px;line-height:1.45;color:#315267;max-width:169mm}
+.rule{height:1px;background:#d9e4e8;margin:8mm 0}
+.tags{display:flex;gap:5mm;margin:10mm 0}.tag{padding:2.5mm 4mm;border:1px solid #c7d8db;border-radius:4mm;font-size:11px;font-weight:750;color:#087565;background:#eefaf6}
+.statgrid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:4mm;margin:5mm 0 7mm}.stat{background:#f1f6f8;border:1px solid #d7e4e9;border-radius:3mm;padding:4mm;min-height:33mm}.stat strong{display:block;font-size:25px;letter-spacing:-1px;color:#0b6f61;margin-bottom:1mm}.stat span{font-size:10px;line-height:1.4;color:#587080}
+.quote{border-left:4px solid #12a78e;background:#e9f8f4;padding:5mm 6mm;font-size:15px;font-weight:650;color:#174739;line-height:1.4;margin:9mm 0}
+small,.fine{font-size:9.5px;color:#68808b;line-height:1.45}
+.foot{position:absolute;bottom:11mm;left:18mm;right:18mm;border-top:1px solid #d9e4e8;padding-top:3mm;display:flex;justify-content:space-between;font-size:9px;color:#8a9ba8}
+.photo{padding:3mm;border:1px solid #d5e0e4;background:#f5f9f9;border-radius:3mm;margin:5mm 0 2mm}
+.photo img{width:100%;display:block;height:auto;border-radius:2mm}
+.case{font-size:12px;font-weight:750;margin:5mm 0 0;color:#2b5665}
+.good{color:#087d68}.bad{color:#b9524b}
+.note{padding:4.5mm 5mm;background:#f6f9fb;border:1px solid #dce7ec;border-radius:2.5mm;font-size:10.5px;color:#496273;line-height:1.5}
+.link{font-size:12px;color:#087565;font-weight:750;text-decoration:none}
+.label{font-size:10px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;color:#6d8390;margin-bottom:2mm}
+.email{border:1px solid #d4e0e5;border-radius:3mm;overflow:hidden;margin-top:8mm}
+.emailhead{background:#f2f6f8;padding:5mm 6mm;border-bottom:1px solid #dae5e9;font-size:11px;line-height:1.7;color:#42596a}
+.emailbody{padding:7mm 7mm 3mm}
+.emailbody p{font-size:12px;line-height:1.62;margin-bottom:4mm;color:#263c4c}
+.emailbody strong{color:#133f44}
+.emailbody a{color:#087565;font-weight:700;text-decoration:none}
+.steps{display:grid;grid-template-columns:1fr 1fr;gap:4mm;margin:7mm 0}
+.step{padding:5mm;border:1px solid #d6e4e8;background:#f5f8fa;border-radius:3mm;min-height:29mm;font-size:11px;color:#395265}
+.step b{display:block;font-size:12px;color:#173448;margin-bottom:2mm}
+</style></head><body>
+<section class="page"><div class="stripe"></div><div class="logo"><strong>CodeAudit</strong> One &nbsp; / &nbsp; Evidence before permission</div>
+<div class="eyebrow">Technology acquisition overview</div>
+<h1>When code is abundant,<br/>verification becomes the bottleneck.</h1>
+<p class="lead">A bounded, independent verification capability for determining whether a specific proposed code change satisfies its required obligations before a protected GitHub merge.</p>
+<div class="quote">A generated fix is not the same thing as a qualified fix.</div>
+<h2>What is working today</h2>
+<p>In a real private GitHub pilot, the CodeAudit App passed a qualifying revision and prevented a deliberately defective revision using its required protected check. A separate executable replay produced a concrete authorization counterexample and rechecked a bounded repair while retaining required functionality.</p>
+<div class="statgrid">
+<div class="stat"><strong>PASS</strong><span>Qualifying revision, exact App-owned GitHub required check on PR #7</span></div>
+<div class="stat"><strong>BLOCKED</strong><span>Deliberate regression, App-owned required check prevented merge on PR #8</span></div>
+<div class="stat"><strong>REPLAY</strong><span>Executable witness and independently rechecked bounded repair in separate local acceptance tests</span></div>
+</div>
+<h2>Why it could matter to GitLab</h2>
+<p>GitLab already invests in detecting vulnerabilities and producing repairs. CodeAudit addresses a different question: whether the resulting exact revision has enough independently checked evidence to proceed. This may complement GitLab's Governed Software Factory by placing a testable qualification boundary between change generation and merge.</p>
+<div class="rule"></div>
+<h3>Falsifiable, deliberately bounded</h3>
+<p>The verified engine supports a defined finite TypeScript scope. These results do not establish universal software correctness, buyer-tested superiority over GitLab, or a generally available cloud proof service. The acquisition case is faster progress toward rigorous change qualification, subject to an independent evaluation.</p>
+<p><a class="link" href="https://alensonyjoseph.github.io/codeaudit-evidence-demo/">View real GitHub captures and the public interactive evidence walkthrough</a></p>
+<div class="foot"><span>CodeAudit One | Confidential discussion requested, no implementation disclosure</span><span>01 / 03</span></div>
+</section>
+<section class="page"><div class="stripe"></div><div class="logo"><strong>CodeAudit</strong> One &nbsp; / &nbsp; Verified platform evidence</div>
+<div class="eyebrow" style="margin-top:10mm">Actual Chrome captures of the private synthetic pilot</div>
+<h1 style="font-size:29px;margin-bottom:3mm">Real GitHub. Real required checks.</h1>
+<p>The screenshots below come from GitHub's actual Checks tabs, not product mockups. The GitHub App is the identified source of the protected checks.</p>
+<div class="case good">01 &nbsp; QUALIFYING REVISION. REQUIRED CHECK PASSED. PR #7.</div>
+<div class="photo"><img src="screenshots/qualifying.png" alt="Actual GitHub PR Checks tab safe revision"></div>
+<p style="font-size:10.5px">CodeAudit / Protected: SUCCESS. GitHub merge state: CLEAN. This PR remains open and has not been merged. Check ID 137027267846.</p>
+<div class="case bad">02 &nbsp; DELIBERATE REGRESSION. REQUIRED CHECK PREVENTED MERGE. PR #8.</div>
+<div class="photo"><img src="screenshots/regression-prevented.png" alt="Actual GitHub PR Checks tab deliberately defective revision"></div>
+<p style="font-size:10.5px">CodeAudit / Protected: FAILURE is the correct safety outcome. GitHub merge state: BLOCKED. This PR remains open. Check ID 137027208026.</p>
+<div class="note"><b>Important distinction.</b> A historical verified PR #3 was actually merged, separately from the two fresh demonstrations above. The executable repair validation was performed in an isolated local test. It was not a patch applied to a GitLab or customer repository.</div>
+<div class="foot"><span>Authentic owner-captured GitHub UI | Synthetic test repository only</span><span>02 / 03</span></div>
+</section>
+<section class="page"><div class="stripe"></div><div class="logo"><strong>CodeAudit</strong> One &nbsp; / &nbsp; First-contact email and evaluation</div>
+<div class="eyebrow" style="margin-top:10mm">Email mock for Corporate Development | Not sent</div>
+<h1 style="font-size:30px">A single, direct introduction.</h1>
+<div class="email">
+<div class="emailhead"><b>To</b> &nbsp; acquisitions@gitlab.com<br/><b>Subject</b> &nbsp; CodeAudit One: independent verification before merge</div>
+<div class="emailbody">
+<p>Hello GitLab Corporate Development,</p>
+<p>Bill Staples' "When code is abundant" describes the change I built CodeAudit One for. Generating code is becoming easier. Independently deciding whether an exact change should be accepted remains difficult.</p>
+<p>In a real GitHub pilot, CodeAudit's required check cleared a qualifying revision and blocked a deliberately defective one. Separately, an executable counterexample exposed an authorization regression, and a bounded repair was rechecked against the original requirements.</p>
+<p>GitLab already has strong detection and remediation capabilities. I believe independent qualification of the resulting change could complement that work and accelerate parts of the Governed Software Factory roadmap.</p>
+<p>You can inspect the genuine GitHub Checks screens and a public interactive evidence walkthrough here:<br/><a href="https://alensonyjoseph.github.io/codeaudit-evidence-demo/">https://alensonyjoseph.github.io/codeaudit-evidence-demo/</a></p>
+<p>I'm exploring a potential acquisition of the technology. If it is relevant to GitLab's direction, I would welcome a reply from the appropriate product and Corporate Development team.</p>
+<p>Best regards,<br/>Alen Sony Joseph<br/>CodeAudit</p>
+</div></div>
+<div class="eyebrow" style="margin-top:10mm">Direct evaluation, with no shared passwords or private source disclosure</div>
+<div class="steps">
+<div class="step"><b>Explore immediately</b>Public evidence and genuine Checks-tab captures work without a CodeAudit account.</div>
+<div class="step"><b>Use GitHub App installation</b>A named GitHub account can select one test repository. Current generic installs provide advisory screening, not independently certified merge approval.</div>
+</div>
+<div class="note">A new-repository, buyer-operated protected verifier is not yet certified for self-service. The protected check shown here belongs to the private finite TypeScript pilot. Do not describe the public browser challenge or the generic screening App as that protected proof engine.</div>
+<div class="foot"><span>Introduction concept | Buyer-safe summary | No pricing, secrets or proprietary recipe</span><span>03 / 03</span></div>
+</section>
+</body></html>
