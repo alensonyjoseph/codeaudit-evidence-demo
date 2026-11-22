@@ -1,72 +1,103 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"/>
-<title>CodeAudit One | GitLab acquisition overview</title>
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CodeAudit One | GitLab Acquisition Evidence & Hands-On Evaluation</title>
 <style>
-@page { size:A4; margin:0; }
-*{box-sizing:border-box}html,body{margin:0;padding:0;background:#fff;color:#162435;font-family:"Segoe UI",Arial,sans-serif;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
-.page{width:210mm;height:297mm;position:relative;overflow:hidden;page-break-after:always;background:#fff;padding:20mm 18mm 18mm}
-.page:last-child{page-break-after:auto}
-.stripe{position:absolute;top:0;left:0;width:100%;height:6mm;background:#102135;}
-.logo{font-size:13px;letter-spacing:1.6px;text-transform:uppercase;color:#087565;font-weight:800}.logo strong{font-weight:900;color:#13283e}
-.eyebrow{font-size:10px;color:#64808e;text-transform:uppercase;letter-spacing:1.6px;font-weight:750;margin:20mm 0 4mm}
-h1{font-size:38px;letter-spacing:-1.8px;line-height:1.08;margin:0 0 5mm;color:#14273c;}
-h2{font-size:22px;letter-spacing:-.8px;line-height:1.15;color:#14273c;margin:0 0 5mm}
-h3{font-size:15px;letter-spacing:-.3px;margin:0 0 2mm;color:#153349}
-p{font-size:12.5px;line-height:1.53;margin:0 0 3mm;color:#304a5c}
-.lead{font-size:16px;line-height:1.45;color:#315267;max-width:169mm}
-.rule{height:1px;background:#d9e4e8;margin:8mm 0}
-.tags{display:flex;gap:5mm;margin:10mm 0}.tag{padding:2.5mm 4mm;border:1px solid #c7d8db;border-radius:4mm;font-size:11px;font-weight:750;color:#087565;background:#eefaf6}
-.statgrid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:4mm;margin:5mm 0 7mm}.stat{background:#f1f6f8;border:1px solid #d7e4e9;border-radius:3mm;padding:4mm;min-height:33mm}.stat strong{display:block;font-size:25px;letter-spacing:-1px;color:#0b6f61;margin-bottom:1mm}.stat span{font-size:10px;line-height:1.4;color:#587080}
-.quote{border-left:4px solid #12a78e;background:#e9f8f4;padding:5mm 6mm;font-size:15px;font-weight:650;color:#174739;line-height:1.4;margin:9mm 0}
-small,.fine{font-size:9.5px;color:#68808b;line-height:1.45}
-.foot{position:absolute;bottom:11mm;left:18mm;right:18mm;border-top:1px solid #d9e4e8;padding-top:3mm;display:flex;justify-content:space-between;font-size:9px;color:#8a9ba8}
-.photo{padding:3mm;border:1px solid #d5e0e4;background:#f5f9f9;border-radius:3mm;margin:5mm 0 2mm}
-.photo img{width:100%;display:block;height:auto;border-radius:2mm}
-.case{font-size:12px;font-weight:750;margin:5mm 0 0;color:#2b5665}
-.good{color:#087d68}.bad{color:#b9524b}
-.note{padding:4.5mm 5mm;background:#f6f9fb;border:1px solid #dce7ec;border-radius:2.5mm;font-size:10.5px;color:#496273;line-height:1.5}
-.link{font-size:12px;color:#087565;font-weight:750;text-decoration:none}
-.label{font-size:10px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;color:#6d8390;margin-bottom:2mm}
-.email{border:1px solid #d4e0e5;border-radius:3mm;overflow:hidden;margin-top:8mm}
-.emailhead{background:#f2f6f8;padding:5mm 6mm;border-bottom:1px solid #dae5e9;font-size:11px;line-height:1.7;color:#42596a}
-.emailbody{padding:7mm 7mm 3mm}
-.emailbody p{font-size:12px;line-height:1.62;margin-bottom:4mm;color:#263c4c}
-.emailbody strong{color:#133f44}
-.emailbody a{color:#087565;font-weight:700;text-decoration:none}
-.steps{display:grid;grid-template-columns:1fr 1fr;gap:4mm;margin:7mm 0}
-.step{padding:5mm;border:1px solid #d6e4e8;background:#f5f8fa;border-radius:3mm;min-height:29mm;font-size:11px;color:#395265}
-.step b{display:block;font-size:12px;color:#173448;margin-bottom:2mm}
+@page{size:A4;margin:0}
+*{box-sizing:border-box}html,body{margin:0;padding:0;background:#fff;color:#182c3f;font-family:"Segoe UI",Arial,Helvetica,sans-serif;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.page{position:relative;width:210mm;height:297mm;background:#fff;padding:0 17mm 15mm;overflow:hidden;page-break-after:always}.page:last-child{page-break-after:auto}
+.top{margin:0 -17mm 13mm;padding:13mm 17mm 11mm;background:#0b2030;color:#eaf8f7;display:flex;justify-content:space-between;align-items:center}
+.brand{font-size:15px;font-weight:900;letter-spacing:-.04em}.brand span{color:#5fe3c6}
+.topright{color:#acd0cc;font-size:9px;letter-spacing:1.4px;text-transform:uppercase;font-weight:700}
+.eyebrow{font-size:9px;font-weight:800;letter-spacing:1.7px;text-transform:uppercase;color:#087c70;margin-bottom:4mm}
+h1{font-size:31px;line-height:1.09;letter-spacing:-1.4px;color:#0d253a;margin:0 0 5mm;max-width:169mm}
+h2{font-size:17px;letter-spacing:-.55px;line-height:1.22;margin:0 0 3mm;color:#123247}
+h3{font-size:12px;letter-spacing:-.2px;margin:0 0 2mm;color:#173c4b}
+p{font-size:10.9px;line-height:1.49;color:#425c6a;margin:0 0 3mm}
+.lead{font-size:13.6px;line-height:1.48;color:#39586b;max-width:174mm}
+.rule{height:1px;background:#dfebee;margin:7mm 0}
+.cols3{display:grid;grid-template-columns:repeat(3,1fr);gap:3mm;margin:7mm 0}
+.card{border:1px solid #d8e8e9;background:#f3f8f8;border-radius:3mm;padding:4mm;min-height:29mm}
+.card b{font-size:11px;display:block;color:#0c7168;margin:0 0 2mm}
+.card p{font-size:9.1px;line-height:1.4;margin:0}
+.callout{padding:4.3mm 5mm;background:#e9f8f3;border-left:3.3px solid #17a588;margin:6mm 0;font-size:11.5px;line-height:1.46;color:#24534c}
+.dual{display:grid;grid-template-columns:1fr 1fr;gap:4mm;margin-top:4mm}
+.figure{padding:2.5mm;border:1px solid #d8e4e8;border-radius:3mm;background:#f6fafa;overflow:hidden;margin:0}
+.figure img{width:100%;height:40mm;object-fit:cover;object-position:center top;display:block;border-radius:1.5mm;background:#0c1c29}
+.figlabel{font-size:9px;font-weight:850;letter-spacing:.4px;margin:2.5mm 0 1.4mm}
+.figcaption{font-size:8.7px;line-height:1.42;color:#607986;margin:0}
+.green{color:#08806d}.red{color:#b25150}
+a{color:#08796d;text-decoration:none}
+.mini{font-size:9px;line-height:1.48;color:#6a8391}
+.foot{position:absolute;bottom:9mm;left:17mm;right:17mm;border-top:1px solid #dce8ec;padding-top:3mm;display:flex;justify-content:space-between;color:#7e95a0;font-size:8.5px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:3mm;margin:7mm 0 6mm}
+.step{border:1px solid #d5e5e8;background:#f5f9fa;border-radius:3mm;padding:4mm;min-height:37mm}
+.stepnum{font-size:10px;font-weight:900;color:#098576}
+.step h3{font-size:12.5px;margin:2mm 0 2mm}
+.step p{font-size:9.2px;line-height:1.45;margin:0}
+.linkbox{border:1px solid #b8ddd6;background:#eaf8f4;padding:4mm 5mm;border-radius:3mm;margin:5mm 0}
+.linkbox strong{display:block;font-size:12px;color:#086f63;margin-bottom:1.5mm}
+.linkbox a{font-size:10.5px;word-break:break-all}
+.trialfig{display:grid;grid-template-columns:1fr 1fr;gap:4mm;margin:5mm 0}
+.trialfig .figure img{height:51mm;object-fit:cover;object-position:center top}
+.trialfig .figure{min-height:68mm}
+.boundary{border:1px solid #d6e4e9;padding:4mm 5mm;border-radius:3mm;background:#f8fafb;font-size:9.8px;line-height:1.47;color:#5d7180;margin-top:6mm}
+.boundary strong{color:#183948}
 </style></head><body>
-<section class="page"><div class="stripe"></div><div class="logo"><strong>CodeAudit</strong> One &nbsp; / &nbsp; Evidence before permission</div>
-<div class="eyebrow">Technology acquisition overview</div>
-<h1>When code is abundant,<br/>verification becomes the bottleneck.</h1>
-<p class="lead">A bounded, independent verification capability for determining whether a specific proposed code change satisfies its required obligations before a protected GitHub merge.</p>
-<div class="quote">A generated fix is not the same thing as a qualified fix.</div>
-<h2>What is working today</h2>
-<p>In a real private GitHub pilot, the CodeAudit App passed a qualifying revision and prevented a deliberately defective revision using its required protected check. A separate executable replay produced a concrete authorization counterexample and rechecked a bounded repair while retaining required functionality.</p>
-<div class="statgrid">
-<div class="stat"><strong>PASS</strong><span>Qualifying revision, exact App-owned GitHub required check on PR #7</span></div>
-<div class="stat"><strong>BLOCKED</strong><span>Deliberate regression, App-owned required check prevented merge on PR #8</span></div>
-<div class="stat"><strong>REPLAY</strong><span>Executable witness and independently rechecked bounded repair in separate local acceptance tests</span></div>
+<section class="page">
+<div class="top"><div class="brand">CodeAudit <span>One</span></div><div class="topright">Acquisition overview · Working evidence</div></div>
+<div class="eyebrow">Strategic technology · independent verification</div>
+<h1>Code is becoming abundant.<br>Evidence must decide what proceeds.</h1>
+<p class="lead">CodeAudit One investigates whether an exact proposed code revision preserves defined obligations, produces reproducible failure evidence when it does not, and separates verified decisions from generated suggestions.</p>
+<div class="callout"><strong>Acquisition thesis:</strong> GitLab already finds vulnerabilities and proposes repairs. CodeAudit explores the distinct qualification boundary between a proposed change and permission to merge, directly relevant to the governed software lifecycle.</div>
+<div class="cols3">
+<div class="card"><b>Executable counterexample</b><p>Actual source behaviour reproduced a cross-tenant authorization regression against the reference.</p></div>
+<div class="card"><b>Independently checked repair</b><p>A bounded local repair replay passed 9/9 acceptance gates, including required functionality.</p></div>
+<div class="card"><b>Protected merge evidence</b><p>The GitHub App's required private-pilot check cleared a qualifying revision and blocked a deliberate defect.</p></div>
 </div>
-<h2>Why it could matter to GitLab</h2>
-<p>GitLab already invests in detecting vulnerabilities and producing repairs. CodeAudit addresses a different question: whether the resulting exact revision has enough independently checked evidence to proceed. This may complement GitLab's Governed Software Factory by placing a testable qualification boundary between change generation and merge.</p>
 <div class="rule"></div>
-<h3>Falsifiable, deliberately bounded</h3>
-<p>The verified engine supports a defined finite TypeScript scope. These results do not establish universal software correctness, buyer-tested superiority over GitLab, or a generally available cloud proof service. The acquisition case is faster progress toward rigorous change qualification, subject to an independent evaluation.</p>
-<p><a class="link" href="https://alensonyjoseph.github.io/codeaudit-evidence-demo/">View real GitHub captures and the public interactive evidence walkthrough</a></p><p style="font-size:11px;color:#3b6471"><b>Optional hands-on GitHub App screening:</b> <a href="https://codeaudit.app/setup" class="link">codeaudit.app/setup</a>. GitHub account only; select a test repository. This is advisory screening, not a protected merge authorization.</p>
-<div class="foot"><span>CodeAudit One | Confidential discussion requested, no implementation disclosure</span><span>01 / 02</span></div>
+<h2>Actual GitHub protected-check outcomes</h2>
+<p>These are genuine owner-captured GitHub Checks screens from the private TypeScript pilot. The failure conclusion on PR #8 is the intended safety decision, not a product malfunction.</p>
+<div class="dual">
+<figure class="figure"><img src="screenshots/qualifying.png" alt="Actual GitHub PR 7 successful protected check">
+<div class="figlabel green">PR #7 · QUALIFYING CHANGE</div><p class="figcaption">CodeAudit / Protected: SUCCESS. GitHub CLEAN. The PR remained open.</p></figure>
+<figure class="figure"><img src="screenshots/regression-prevented.png" alt="Actual GitHub PR 8 failed protected check">
+<div class="figlabel red">PR #8 · REGRESSION PREVENTED</div><p class="figcaption">CodeAudit / Protected: FAILURE. GitHub BLOCKED. The PR remained open.</p></figure>
+</div>
+<div class="rule"></div>
+<h2>What a buyer can establish</h2>
+<p>The existing results support a finite TypeScript verification pilot and a distinct GitHub integration. They do not establish universal correctness, general-purpose production verification or comparative superiority to GitLab. A historical safe PR #3 was merged, separately from these fresh examples.</p>
+<p class="mini"><a href="https://alensonyjoseph.github.io/codeaudit-evidence-demo/">Inspect the public evidence site, genuine screenshots and live GitHub App trial</a>. Proprietary verification internals, credentials and owner-only source are not disclosed.</p>
+<div class="foot"><span>Evidence over claims · CodeAudit One · November 2026</span><span>01 / 02</span></div>
 </section>
-<section class="page"><div class="stripe"></div><div class="logo"><strong>CodeAudit</strong> One &nbsp; / &nbsp; Verified platform evidence</div>
-<div class="eyebrow" style="margin-top:10mm">Actual Chrome captures of the private synthetic pilot</div>
-<h1 style="font-size:29px;margin-bottom:3mm">Real GitHub. Real required checks.</h1>
-<p>The screenshots below come from GitHub's actual Checks tabs, not product mockups. The GitHub App is the identified source of the protected checks.</p>
-<div class="case good">01 &nbsp; QUALIFYING REVISION. REQUIRED CHECK PASSED. PR #7.</div>
-<div class="photo"><img src="screenshots/qualifying.png" alt="Actual GitHub PR Checks tab safe revision"></div>
-<p style="font-size:10.5px">CodeAudit / Protected: SUCCESS. GitHub merge state: CLEAN. This PR remains open and has not been merged. Check ID 137027267846.</p>
-<div class="case bad">02 &nbsp; DELIBERATE REGRESSION. REQUIRED CHECK PREVENTED MERGE. PR #8.</div>
-<div class="photo"><img src="screenshots/regression-prevented.png" alt="Actual GitHub PR Checks tab deliberately defective revision"></div>
-<p style="font-size:10.5px">CodeAudit / Protected: FAILURE is the correct safety outcome. GitHub merge state: BLOCKED. This PR remains open. Check ID 137027208026.</p>
-<div class="note"><b>Important distinction.</b> A historical verified PR #3 was actually merged, separately from the two fresh demonstrations above. The executable repair validation was performed in an isolated local test. It was not a patch applied to a GitLab or customer repository.</div>
-<div class="foot"><span>Authentic owner-captured GitHub UI | Synthetic test repository only</span><span>02 / 02</span></div>
+<section class="page">
+<div class="top"><div class="brand">CodeAudit <span>One</span></div><div class="topright">Actual GitHub App · Independent repository trial</div></div>
+<div class="eyebrow">No shared passwords · No CodeAudit signup</div>
+<h1>Install. Select a repository.<br>See the result in GitHub.</h1>
+<p class="lead">The hosted App has now completed a real PR screening on a second repository. GitHub received a revision-linked Check Run and a CodeAudit-authored comment, both visible publicly and inspectable at the original URLs.</p>
+<div class="steps">
+<div class="step"><span class="stepnum">01</span><h3>Install the App</h3><p>Sign in to GitHub. Choose <b>Only select repositories</b> and authorize a disposable test repo.</p></div>
+<div class="step"><span class="stepnum">02</span><h3>Open a small PR</h3><p>Create or update a pull request in that repo. GitHub sends the event to CodeAudit.</p></div>
+<div class="step"><span class="stepnum">03</span><h3>Inspect the outcome</h3><p>Open the PR's <b>Checks</b> and <b>Conversation</b> tabs for the screening result and bot comment.</p></div>
+</div>
+<div class="linkbox">
+<strong>Direct installation and setup</strong>
+<a href="https://github.com/apps/codeaudit-app/installations/new">github.com/apps/codeaudit-app/installations/new</a><br>
+<a href="https://codeaudit.app/setup">codeaudit.app/setup</a> · No CodeAudit password, API key or payment card required
+</div>
+<h2>Actual external-repository result</h2>
+<p>Second repository: <b>codeaudit-evidence-demo</b>. Public test PR #1, revision 206b13b. The bot flagged changed authentication and permission behaviour. This is an advisory outcome, not a formal proof.</p>
+<div class="trialfig">
+<figure class="figure"><img src="screenshots/external-pr1-check-run.png" alt="Real GitHub Check Run completed neutral on second repository">
+<div class="figlabel green">GITHUB CHECK · COMPLETED, NEUTRAL</div>
+<p class="figcaption">Authentic CodeAudit / Screening Check Run. <a href="https://github.com/alensonyjoseph/codeaudit-evidence-demo/runs/137062631705">Open original run</a>.</p>
+</figure>
+<figure class="figure"><img src="screenshots/external-pr1-overview.png" alt="Real CodeAudit bot PR comment on second repository">
+<div class="figlabel green">GITHUB PR COMMENT · PUBLISHED</div>
+<p class="figcaption">CodeAudit App wrote a revision-linked comment. <a href="https://github.com/alensonyjoseph/codeaudit-evidence-demo/pull/1">Open the actual PR</a>.</p>
+</figure>
+</div>
+<div class="boundary"><strong>Scope of this self-service evaluation:</strong> New GitHub App installations currently provide advisory screening. They do not run the private trusted proof worker or issue a protected merge authorization. The separately demonstrated protected pass/block results on page one came from the bounded private pilot. Deeper buyer-selected verification requires a scoped technical evaluation.</div>
+<p style="font-size:9.5px;margin-top:4mm">The GitHub App uses GitHub's own authorization. Choose only a test repository containing code you are comfortable granting the stated read/write check and PR permissions.</p>
+<div class="foot"><span>Real, inspectable GitHub URLs · No confidential algorithm disclosure</span><span>02 / 02</span></div>
 </section>
 </body></html>
