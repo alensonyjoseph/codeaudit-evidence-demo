@@ -12,3 +12,4 @@ export function mayReadResource(input: AccessRequest): boolean {
   return input.callerTenant === input.resourceTenant || input.role === "admin";
 }
 // Retest: same bounded synthetic policy, new exact head revision.
+// Retest: CodeAudit App after restoring the known-working private integration.
