@@ -11,3 +11,4 @@ export function mayReadResource(input: AccessRequest): boolean {
   // Deliberate candidate policy change for independent reviewer inspection.
   return input.callerTenant === input.resourceTenant || input.role === "admin";
 }
+// Retest: same bounded synthetic policy, new exact head revision.
